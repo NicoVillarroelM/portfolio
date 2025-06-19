@@ -31,7 +31,7 @@ const Hero = () => {
   };
 
   const handleDownload = () => {
-    window.open("/cv-nicolas-villarroel.pdf", "_blank");
+    window.open("/CV-NicolasVM.pdf", "_blank");
   };
 
   return (
