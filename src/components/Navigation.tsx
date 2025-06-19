@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import ThemeToggle from "./ThemeToggle";
 import { navItems } from "../constants/NavItems";
 import type { NavigationProps } from "../types/Navigation"; 
+import AnimatedLogo from "../utils/AnimatedLogo";
 
 const Navigation = ({ activeSection }: NavigationProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,40 +24,40 @@ const Navigation = ({ activeSection }: NavigationProps) => {
   };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300${
-        isScrolled
-          ? "bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm"
-          : "bg-transparent"
-      }`}
+    <motion.nav
+      initial={{ y: -50, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50"
     >
-      <div className="max-w-6xl mx-auto px-6 py-4">
-        <div className="flex justify-between items-center">
-          <div className="font-bold text-xl text-gray-900 dark:text-white">
-            NV
-          </div>
+      <div className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl rounded-full shadow-lg border border-gray-200/20 dark:border-gray-700/20 px-6 py-3">
+        <div className="flex items-center space-x-8">
+          <AnimatedLogo size="sm" speed="normal" />
 
           <div className="flex items-center space-x-6">
-            <div className="hidden md:flex space-x-8">
+            <div className="hidden md:flex space-x-6">
               {navItems.map((item) => (
-                <button
+                <motion.button
                   key={item.id}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-sm font-medium transition-colors duration-200 cursor-pointer ${
+                  className={`relative text-sm font-medium transition-colors duration-200 cursor-pointer px-3 py-2 rounded-full ${
                     activeSection === item.id
-                      ? "text-blue-600 dark:text-blue-400"
-                      : "text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+                      ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30"
+                      : "text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800"
                   }`}
                 >
                   {item.label}
-                </button>
+                </motion.button>
               ))}
             </div>
+            
             <ThemeToggle />
           </div>
         </div>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 

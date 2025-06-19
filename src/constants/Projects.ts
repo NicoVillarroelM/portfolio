@@ -1,10 +1,14 @@
+import proyecto1 from "../assets/proyecto1.png";
+import proyecto2 from "../assets/proyecto2.png";
+import proyecto3 from "../assets/proyecto3.png";
+
 export const projects = [
     {
       id: 1,
       title: "Sistema inventario",
       description: "Sistema de gestión de inventario para pequeñas y medianas empresas, con funcionalidades de seguimiento de productos y reportes.",
-      image: "public/proyecto1.png",
-      tags: ["Python", "Django", "Sql"],
+      image: proyecto1,
+      tags: ["Python", "Django", "SQL"],
       link: "#",
        colors: {
       light: "text-blue-600",
@@ -15,7 +19,7 @@ export const projects = [
       id: 2,
       title: "Página Web TalcaDevs",
       description: "Website para TalcaDevs para el desarrollo de software que necesites con un equipo de profesionales altamente capacitados.",
-      image: "public/proyecto2.png",
+      image: proyecto2,
       tags: ["React", "Tailwind", "Typescript"],
       link: "#",
        colors: {
@@ -27,7 +31,7 @@ export const projects = [
       id: 3,
       title: "To Work",
       description: "Página web para estudiantes egresados de diferentes universidades, diseñada para facilitar la búsqueda de empleo y la conexión con empresas.",
-      image: "public/proyecto3.png",
+      image: proyecto3,
       tags: ["React", "Tailwind", "TypeScript"],
       link: "#",
        colors: {
