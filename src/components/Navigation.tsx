@@ -1,22 +1,10 @@
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import ThemeToggle from "./ThemeToggle";
 import { navItems } from "../constants/NavItems";
-import type { NavigationProps } from "../types/Navigation"; 
+import type { NavigationProps } from "../types/Navigation";
 import AnimatedLogo from "../utils/AnimatedLogo";
 
 const Navigation = ({ activeSection }: NavigationProps) => {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({
       behavior: "smooth",
@@ -52,7 +40,7 @@ const Navigation = ({ activeSection }: NavigationProps) => {
                 </motion.button>
               ))}
             </div>
-            
+
             <ThemeToggle />
           </div>
         </div>
