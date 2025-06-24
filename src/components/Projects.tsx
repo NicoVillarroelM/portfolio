@@ -1,6 +1,9 @@
+import { useTranslation } from "react-i18next";
 import { projects } from "../constants/Projects";
 
 const Projects = () => {
+  const { t } = useTranslation();
+
   return (
     <section
       id="projects"
@@ -9,11 +12,10 @@ const Projects = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full">
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl font-light text-gray-900 dark:text-white mb-4 sm:mb-6 pt-8">
-            Mis <span className="font-bold">Proyectos</span>
+            {t("projects.title").split(" ")[0]}{" "}
           </h2>
           <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto px-4 sm:px-0">
-            Una selección de proyectos que demuestran mi experiencia en diseño
-            UX/UI y desarrollo frontend.
+            {t("projects.subtitle")}
           </p>
         </div>
 
@@ -26,18 +28,18 @@ const Projects = () => {
               <div className="aspect-video overflow-hidden">
                 <img
                   src={project.image}
-                  alt={project.title}
+                  alt={t(project.titleKey ?? "")}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
 
               <div className="p-4 sm:p-6">
                 <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                  {project.title}
+                  {t(project.titleKey ?? "")}
                 </h3>
 
                 <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-3 sm:mb-4 leading-relaxed">
-                  {project.description}
+                  {t(project.descriptionKey ?? "")}
                 </p>
 
                 <div className="flex flex-wrap gap-2">

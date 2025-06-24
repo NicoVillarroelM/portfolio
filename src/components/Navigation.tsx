@@ -3,8 +3,12 @@ import ThemeToggle from "./ThemeToggle";
 import { navItems } from "../constants/NavItems";
 import type { NavigationProps } from "../types/Navigation";
 import AnimatedLogo from "../utils/AnimatedLogo";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Navigation = ({ activeSection }: NavigationProps) => {
+  const { t } = useTranslation();
+
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({
       behavior: "smooth",
@@ -36,12 +40,15 @@ const Navigation = ({ activeSection }: NavigationProps) => {
                       : "text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800"
                   }`}
                 >
-                  {item.label}
+                  {t(item.labelKey)}
                 </motion.button>
               ))}
             </div>
 
-            <ThemeToggle />
+            <div className="flex items-center space-x-4">
+              <LanguageSwitcher />
+              <ThemeToggle />
+            </div>
           </div>
         </div>
       </div>

@@ -1,6 +1,9 @@
 import { Mail, Github, Linkedin } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
+  const { t } = useTranslation();
+
   return (
     <section
       id="contact"
@@ -9,11 +12,13 @@ const Contact = () => {
       <div className="max-w-6xl mx-auto px-6 w-full">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-light text-gray-900 dark:text-white mb-4">
-            ¿Interesado en <span className="font-bold">contactarme?</span>
+            {t("about.title").split(" ")[0]}{" "}
+            <span className="font-bold">
+              {t("about.title").split(" ").slice(1).join(" ")}
+            </span>
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Si tienes una oportunidad laboral o proyecto interesante, me
-            encantaría conocer más detalles.
+            {t("contact.subtitle")}
           </p>
         </div>
 
@@ -28,9 +33,12 @@ const Contact = () => {
               <Github className="w-8 h-8 text-gray-700 dark:text-gray-300" />
             </div>
             <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-              GitHub
+              {t("contact.cards.github.label")}
             </h3>
-            <p className="text-gray-600 dark:text-gray-300">@NicoVillarroelM</p>
+            <p className="text-gray-600 dark:text-gray-300">
+              {" "}
+              {t("contact.cards.github.username")}
+            </p>
           </a>
 
           <a
@@ -43,10 +51,10 @@ const Contact = () => {
               <Linkedin className="w-8 h-8 text-blue-600 dark:text-blue-400" />
             </div>
             <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-              LinkedIn
+              {t("contact.cards.linkedin.label")}
             </h3>
             <p className="text-gray-600 dark:text-gray-300">
-              Nicolás Villarroel
+              {t("contact.cards.linkedin.username")}
             </p>
           </a>
 
@@ -58,10 +66,10 @@ const Contact = () => {
               <Mail className="w-8 h-8 text-blue-600 dark:text-blue-400" />
             </div>
             <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-              Email
+              {t("contact.cards.email.label")}
             </h3>
             <p className="text-gray-600 dark:text-gray-300">
-              mezanicolas10@gmail.com
+              {t("contact.cards.email.address")}
             </p>
           </a>
         </div>
@@ -69,9 +77,7 @@ const Contact = () => {
         <div className="text-center">
           <div className="bg-blue-50 dark:bg-blue-900/20 rounded-2xl p-8 max-w-3xl mx-auto">
             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-              Estoy abierto a nuevas oportunidades laborales y colaboraciones en
-              proyectos innovadores. No dudes en contactarme para discutir
-              posibles colaboraciones.
+              {t("contact.footerText")}
             </p>
           </div>
         </div>

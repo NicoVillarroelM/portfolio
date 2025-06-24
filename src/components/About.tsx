@@ -1,5 +1,7 @@
+import { useTranslation } from "react-i18next";
 import techImage from "../assets/techImage.png";
 const About = () => {
+  const { t } = useTranslation();
   return (
     <section
       id="about"
@@ -9,21 +11,18 @@ const About = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="text-center md:text-left">
             <h2 className="text-3xl sm:text-4xl font-light text-gray-900 dark:text-white mb-4 sm:mb-6">
-              Sobre <span className="font-bold">mí</span>
+              {t("about.title").split(" ")[0]}{" "}
+              <span className="font-bold">
+                {t("about.title").split(" ").slice(1).join(" ")}
+              </span>
             </h2>
 
             <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed">
-              Soy desarrollador web con formación académica y aprendizaje
-              autodidacta, apasionado por crear aplicaciones modernas,
-              funcionales y visualmente atractivas.
+              {t("about.paragraph1")}
             </p>
 
             <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-6 sm:mb-8 leading-relaxed">
-              Actualmente me especializo en tecnologías como Vite/React,
-              Angular, TypeScript, Tailwind CSS y herramientas como Swagger para
-              documentación y Git para control de versiones. Me enfoco en
-              aplicar buenas prácticas de desarrollo, manteniendo un código
-              limpio y escalable.
+              {t("about.paragraph2")}
             </p>
 
             <div className="flex flex-wrap gap-3 sm:gap-4 justify-center md:justify-start">
@@ -52,7 +51,7 @@ const About = () => {
             <div className="w-72 h-72 sm:w-80 sm:h-80 md:w-full md:aspect-[4/3] rounded-2xl bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-950 dark:to-purple-950 overflow-hidden border border-gray-200 dark:border-gray-700">
               <img
                 src={techImage}
-                alt="Profile"
+                alt={t("about.imageAlt")}
                 className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500"
               />
             </div>

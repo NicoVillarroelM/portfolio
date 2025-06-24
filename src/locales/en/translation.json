@@ -1,0 +1,63 @@
+{
+  "nav": {
+    "hero": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+   "hero": {
+    "title": "Hello, I'm",
+    "subtitle": "Frontend Developer",
+    "description": "UX/UI Designer and frontend developer passionate about creating exceptional and functional digital experiences.",
+    "viewWork": "My projects",
+    "downloadCV": "Download CV"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I am a frontend developer with experience in building modern and responsive web applications. I love learning new technologies and constantly improving my skills.",
+    "paragraph1": "I am a web developer with academic training and self-taught learning, passionate about creating modern, functional and visually appealing applications.",
+    "paragraph2": "I currently specialize in technologies such as Vite/React, Angular, TypeScript, Tailwind CSS and tools like Swagger for documentation and Git for version control. I focus on applying good development practices, maintaining clean and scalable code.",
+    "imageAlt": "Nicolas Villarroel - Web Developer"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "A selection of projects showcasing my UX/UI design and frontend development expertise.",
+    "list": [
+      {
+        "title": "Inventory System",
+        "description": "Inventory management system for small and medium-sized businesses, with product tracking and reporting functionalities."
+      },
+      {
+        "title": "TalcaDevs Website",
+        "description": "Website for TalcaDevs offering the software development you need with a team of highly skilled professionals."
+      },
+      {
+        "title": "To Work",
+        "description": "Website for university graduates, designed to facilitate job searching and connecting with companies."
+      },
+      {
+        "title": "LogisticPlus",
+        "description": "Website for a logistics company, designed to optimize shipment management and improve customer experience."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact Me",
+    "subtitle": "If you have a job opportunity or interesting project, I'd love to hear the details.",
+    "cards": {
+      "github": {
+        "label": "GitHub",
+        "username": "@NicoVillarroelM"
+      },
+      "linkedin": {
+        "label": "LinkedIn",
+        "username": "Nicolás Villarroel"
+      },
+      "email": {
+        "label": "Email",
+        "address": "mezanicolas10@gmail.com"
+      }
+    },
+    "footerText": "I'm open to new job opportunities and collaborations on innovative projects. Feel free to contact me to discuss potential collaborations."
+  }
+}

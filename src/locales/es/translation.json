@@ -1,0 +1,63 @@
+{
+  "nav": {
+    "hero": "Inicio",
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+   "hero": {
+    "title": "Hola, soy",
+    "subtitle": "Desarrollador Frontend",
+    "description": "Diseñador UX/UI y desarrollador frontend apasionado por crear experiencias digitales excepcionales y funcionales.",
+    "viewWork": "Conoce mi trabajo",
+    "downloadCV": "Descargar CV"
+  },
+ "about": {
+    "title": "Sobre mí",
+    "description": "Soy un desarrollador frontend con experiencia en la creación de aplicaciones web modernas y responsivas. Me encanta aprender nuevas tecnologías y mejorar mis habilidades constantemente.",
+    "paragraph1": "Soy desarrollador web con formación académica y aprendizaje autodidacta, apasionado por crear aplicaciones modernas, funcionales y visualmente atractivas.",
+    "paragraph2": "Actualmente me especializo en tecnologías como Vite/React, Angular, TypeScript, Tailwind CSS y herramientas como Swagger para documentación y Git para control de versiones. Me enfoco en aplicar buenas prácticas de desarrollo, manteniendo un código limpio y escalable.",
+    "imageAlt": "Nicolás Villarroel - Desarrollador Web"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "subtitle": "Una selección de proyectos que demuestran mi experiencia en diseño UX/UI y desarrollo frontend.",
+    "list": [
+      {
+        "title": "Sistema inventario",
+        "description": "Sistema de gestión de inventario para pequeñas y medianas empresas, con funcionalidades de seguimiento de productos y reportes."
+      },
+      {
+        "title": "Página Web TalcaDevs",
+        "description": "Website para TalcaDevs para el desarrollo de software que necesites con un equipo de profesionales altamente capacitados."
+      },
+      {
+        "title": "To Work",
+        "description": "Página web para estudiantes egresados de diferentes universidades, diseñada para facilitar la búsqueda de empleo y la conexión con empresas."
+      },
+      {
+        "title": "LogisticPlus",
+        "description": "Página web para una empresa de logística, diseñada para optimizar la gestión de envíos y mejorar la experiencia del cliente."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contáctame",
+    "subtitle": "Si tienes una oportunidad laboral o proyecto interesante, me encantaría conocer más detalles.",
+    "cards": {
+      "github": {
+        "label": "GitHub",
+        "username": "@NicoVillarroelM"
+      },
+      "linkedin": {
+        "label": "LinkedIn",
+        "username": "Nicolás Villarroel"
+      },
+      "email": {
+        "label": "Email",
+        "address": "mezanicolas10@gmail.com"
+      }
+    },
+    "footerText": "Estoy abierto a nuevas oportunidades laborales y colaboraciones en proyectos innovadores. No dudes en contactarme para discutir posibles colaboraciones."
+  }
+}

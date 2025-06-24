@@ -5,21 +5,21 @@ import logisticPlus from "../assets/logisticPlus.png";
 
 export const projects = [
     {
-      id: 1,
-      title: "Sistema inventario",
-      description: "Sistema de gestión de inventario para pequeñas y medianas empresas, con funcionalidades de seguimiento de productos y reportes.",
-      image: proyecto1,
-      tags: ["Python", "Django", "SQL"],
-      link: "#",
-       colors: {
+    id: 1,
+    image: proyecto1,
+    titleKey: "projects.list.0.title",
+    descriptionKey: "projects.list.0.description",
+    tags: ["Python", "Django", "SQL"],
+    link: "#",
+    colors: {
       light: "text-blue-600",
       dark: "text-blue-400"
     }
-    },
+  },
     {
       id: 2,
-      title: "Página Web TalcaDevs",
-      description: "Website para TalcaDevs para el desarrollo de software que necesites con un equipo de profesionales altamente capacitados.",
+      titleKey: "projects.list.1.title",
+      descriptionKey: "projects.list.1.description",
       image: proyecto2,
       tags: ["React", "Tailwind", "Typescript"],
       link: "https://talcadevs.vercel.app/",
@@ -30,8 +30,8 @@ export const projects = [
     },
     {
       id: 3,
-      title: "To Work",
-      description: "Página web para estudiantes egresados de diferentes universidades, diseñada para facilitar la búsqueda de empleo y la conexión con empresas.",
+      titleKey: "projects.list.2.title",
+      descriptionKey: "projects.list.2.description",
       image: proyecto3,
       tags: ["React", "Tailwind", "TypeScript"],
       link: "#",
@@ -42,8 +42,8 @@ export const projects = [
     },
     {
       id: 4,
-      title: "LogisticPlus",
-      description: "Página web para una empresa de logística, diseñada para optimizar la gestión de envíos y mejorar la experiencia del cliente.",
+      titleKey: "projects.list.3.title",
+      descriptionKey: "projects.list.3.description",
       image: logisticPlus,
       tags: ["html", "CSS", "JavaScript"],
       link: "https://www.logisticplus.cl/",

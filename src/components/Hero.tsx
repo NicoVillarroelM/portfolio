@@ -2,11 +2,13 @@ import { ArrowDown, Download, Github, Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import Button from "../buttons/Button";
+import { useTranslation } from "react-i18next";
 
 const Hero = () => {
+  const { t } = useTranslation();
   const [displayedText, setDisplayedText] = useState("");
   const [showName, setShowName] = useState(false);
-  const fullText = "Hola, soy";
+  const fullText = t("hero.title");
   const name = "Nicolás Villarroel";
 
   useEffect(() => {
@@ -22,7 +24,7 @@ const Hero = () => {
     }, 100);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [fullText]);
 
   const scrollToAbout = () => {
     document.getElementById("projects")?.scrollIntoView({
@@ -67,17 +69,16 @@ const Hero = () => {
             </motion.span>
           </div>
 
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={showName ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
             className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed"
           >
-            Diseñador UX/UI y desarrollador frontend apasionado por crear
-            experiencias digitales excepcionales y funcionales.
+            {t("hero.description")}
           </motion.p>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={showName ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.6, ease: "easeOut", delay: 1 }}
@@ -88,7 +89,7 @@ const Hero = () => {
               whileTap={{ scale: 0.95 }}
             >
               <Button
-                label="Conoce mi trabajo"
+                label={t("hero.viewWork")}
                 variant="dark"
                 onClick={scrollToAbout}
               />
@@ -99,7 +100,7 @@ const Hero = () => {
               whileTap={{ scale: 0.95 }}
             >
               <Button
-                label="Descargar CV"
+                label={t("hero.downloadCV")}
                 icon={Download}
                 iconPosition="left"
                 onClick={handleDownload}
@@ -108,7 +109,7 @@ const Hero = () => {
             </motion.div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={showName ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, ease: "easeOut", delay: 1.3 }}
@@ -117,7 +118,12 @@ const Hero = () => {
             <motion.a
               initial={{ opacity: 0, scale: 0 }}
               animate={showName ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.5, delay: 1.6, type: "spring", stiffness: 200 }}
+              transition={{
+                duration: 0.5,
+                delay: 1.6,
+                type: "spring",
+                stiffness: 200,
+              }}
               whileHover={{ scale: 1.2, rotate: 10 }}
               whileTap={{ scale: 0.9 }}
               href="https://github.com/NicoVillarroelM"
@@ -125,11 +131,16 @@ const Hero = () => {
             >
               <Github className="w-5 h-5" />
             </motion.a>
-            
+
             <motion.a
               initial={{ opacity: 0, scale: 0 }}
               animate={showName ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.5, delay: 1.8, type: "spring", stiffness: 200 }}
+              transition={{
+                duration: 0.5,
+                delay: 1.8,
+                type: "spring",
+                stiffness: 200,
+              }}
               whileHover={{ scale: 1.2, rotate: -10 }}
               whileTap={{ scale: 0.9 }}
               href="https://www.linkedin.com/in/nicol%C3%A1s-villarroel-meza-045b71257/"
@@ -142,7 +153,7 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 1 }}
