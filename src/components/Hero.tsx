@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import Button from "../buttons/Button";
 import { useTranslation } from "react-i18next";
+import CV from "../utils/CV-NicoVillarroel.pdf";
 
 const Hero = () => {
   const { t } = useTranslation();
@@ -33,7 +34,7 @@ const Hero = () => {
   };
 
   const handleDownload = () => {
-    window.open("/CV-NicolasVM.pdf", "_blank");
+    window.open(CV, "_blank");
   };
 
   return (
