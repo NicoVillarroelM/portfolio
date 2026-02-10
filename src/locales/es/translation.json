@@ -24,6 +24,10 @@
     "subtitle": "Una selección de proyectos que demuestran mi experiencia en diseño UX/UI y desarrollo frontend.",
     "list": [
       {
+        "title": "Altyro Logistics SPA",
+        "description": "Desarrollador FullStack. Desarrollo de aplicación web logística para optimizar gestión y seguimiento en tiempo real. Creación de módulos (Angular, TS, Firebase), integración de mapas (HERE maps) y seguridad. Trabajo con metodologías ágiles."
+      },
+      {
         "title": "Sistema inventario",
         "description": "Sistema de gestión de inventario para pequeñas y medianas empresas, con funcionalidades de seguimiento de productos y reportes."
       },
