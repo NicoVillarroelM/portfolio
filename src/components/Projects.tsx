@@ -58,15 +58,18 @@ const Projects = () => {
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full">
         <div className="text-center mb-12 sm:mb-20">
-          <h2 className="text-3xl sm:text-4xl font-light text-gray-900 dark:text-white mb-4 sm:mb-6 pt-8">
-            {t("projects.title").split(" ")[0]}{" "}
-            <span className="font-bold">
-              {t("projects.title").split(" ").slice(1).join(" ")}
-            </span>
+          <h2 className="text-3xl sm:text-4xl font-light text-gray-900 dark:text-white mb-4 sm:mb-6">
+            {t("projects.title").split(" ").length === 1 ? (
+              <span className="font-bold">{t("projects.title")}</span>
+            ) : (
+              <>
+                {t("projects.title").split(" ")[0]}{" "}
+                <span className="font-bold">
+                  {t("projects.title").split(" ").slice(1).join(" ")}
+                </span>
+              </>
+            )}
           </h2>
-          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto px-4 sm:px-0">
-            {t("projects.subtitle")}
-          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -82,7 +85,7 @@ const Projects = () => {
                   alt={t(project.titleKey ?? "")}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
-                
+
                 {project.link && project.link !== "#" && (
                   <a
                     href={project.link}
@@ -103,7 +106,7 @@ const Projects = () => {
                   {t(project.titleKey ?? "")}
                 </h3>
 
-                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-5 flex-grow font-light">
+                <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-5 flex-grow">
                   {t(project.descriptionKey ?? "")}
                 </p>
 

@@ -10,14 +10,20 @@ const Contact = () => {
       className="min-h-screen flex items-center bg-gray-50 dark:bg-gray-950 transition-colors duration-300"
     >
       <div className="max-w-6xl mx-auto px-6 w-full">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-light text-gray-900 dark:text-white mb-4">
-            {t("about.title").split(" ")[0]}{" "}
-            <span className="font-bold">
-              {t("about.title").split(" ").slice(1).join(" ")}
-            </span>
+        <div className="text-center mb-12 sm:mb-20">
+          <h2 className="text-3xl sm:text-4xl font-light text-gray-900 dark:text-white mb-4 sm:mb-6">
+            {t("contact.title").split(" ").length === 1 ? (
+              <span className="font-bold">{t("contact.title")}</span>
+            ) : (
+              <>
+                {t("contact.title").split(" ")[0]}{" "}
+                <span className="font-bold">
+                  {t("contact.title").split(" ").slice(1).join(" ")}
+                </span>
+              </>
+            )}
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             {t("contact.subtitle")}
           </p>
         </div>

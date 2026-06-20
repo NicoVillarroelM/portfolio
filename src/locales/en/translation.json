@@ -16,12 +16,11 @@
     "title": "About Me",
     "description": "I am a frontend developer with experience in building modern and responsive web applications. I love learning new technologies and constantly improving my skills.",
     "paragraph1": "I am a web developer with academic training and self-taught learning, passionate about creating modern, functional and visually appealing applications.",
-    "paragraph2": "I currently specialize in technologies such as Vite/React, Angular, TypeScript, Tailwind CSS and tools like Swagger for documentation and Git for version control. I focus on applying good development practices, maintaining clean and scalable code.",
+    "paragraph2": "I currently specialize in technologies such as React, Angular, TypeScript, Tailwind CSS and tools like Swagger for documentation and Git for version control. I focus on applying good development practices, maintaining clean and scalable code.",
     "imageAlt": "Nicolas Villarroel - Web Developer"
   },
   "projects": {
     "title": "Projects",
-    "subtitle": "A selection of projects showcasing my UX/UI design and frontend development expertise.",
     "viewProject": "View Project",
     "comingSoon": "Private repository",
     "list": [

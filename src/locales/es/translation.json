@@ -16,12 +16,11 @@
     "title": "Sobre mí",
     "description": "Soy un desarrollador frontend con experiencia en la creación de aplicaciones web modernas y responsivas. Me encanta aprender nuevas tecnologías y mejorar mis habilidades constantemente.",
     "paragraph1": "Soy desarrollador web con formación académica y aprendizaje autodidacta, apasionado por crear aplicaciones modernas, funcionales y visualmente atractivas.",
-    "paragraph2": "Actualmente me especializo en tecnologías como Vite/React, Angular, TypeScript, Tailwind CSS y herramientas como Swagger para documentación y Git para control de versiones. Me enfoco en aplicar buenas prácticas de desarrollo, manteniendo un código limpio y escalable.",
+    "paragraph2": "Actualmente me especializo en tecnologías como React, Angular, TypeScript, Tailwind CSS y herramientas como Swagger para documentación y Git para control de versiones. Me enfoco en aplicar buenas prácticas de desarrollo, manteniendo un código limpio y escalable.",
     "imageAlt": "Nicolás Villarroel - Desarrollador Web"
   },
   "projects": {
     "title": "Proyectos",
-    "subtitle": "Una selección de proyectos que demuestran mi experiencia en diseño UX/UI y desarrollo frontend.",
     "viewProject": "Ver proyecto",
     "comingSoon": "Repositorio privado",
     "list": [
@@ -35,7 +34,7 @@
       },
       {
         "title": "Página Web TalcaDevs",
-        "description": "Website para TalcaDevs para el desarrollo de software que necesites con un equipo de profesionales altamente capacitados."
+        "description": "Página web para TalcaDevs para el desarrollo de software que necesites con un equipo de profesionales altamente capacitados."
       },
       {
         "title": "To Work",
