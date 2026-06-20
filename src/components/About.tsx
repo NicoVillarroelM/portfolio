@@ -1,11 +1,31 @@
 import { useTranslation } from "react-i18next";
+import {
+  SiReact,
+  SiTypescript,
+  SiPython,
+  SiDjango,
+  SiTailwindcss,
+  SiGithub,
+  SiAngular
+} from "react-icons/si";
 import techImage from "../assets/techImage.png";
+
+const skills = [
+  { name: "React", icon: SiReact, color: "text-[#61DAFB]" },
+  { name: "TypeScript", icon: SiTypescript, color: "text-[#3178C6]" },
+  { name: "Angular", icon: SiAngular, color: "text-[#DD0031]" },
+  { name: "Python", icon: SiPython, color: "text-[#3776AB]" },
+  { name: "Django", icon: SiDjango, color: "text-[#092E20] dark:text-[#44B78B]" },
+  { name: "TailwindCSS", icon: SiTailwindcss, color: "text-[#06B6D4]" },
+  { name: "GitHub", icon: SiGithub, color: "text-[#181717] dark:text-white" },
+];
+
 const About = () => {
   const { t } = useTranslation();
   return (
     <section
       id="about"
-      className="min-h-screen flex items-center bg-white dark:bg-gray-900 transition-colors duration-300"
+      className="min-h-screen flex items-center bg-gray-50 dark:bg-gray-950 transition-colors duration-300"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
@@ -26,24 +46,18 @@ const About = () => {
             </p>
 
             <div className="flex flex-wrap gap-3 sm:gap-4 justify-center md:justify-start">
-              <span className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-3 sm:px-4 py-2 rounded-full text-sm">
-                React
-              </span>
-              <span className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-3 sm:px-4 py-2 rounded-full text-sm">
-                TypeScript
-              </span>
-              <span className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-3 sm:px-4 py-2 rounded-full text-sm">
-                Python
-              </span>
-              <span className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-3 sm:px-4 py-2 rounded-full text-sm">
-                Django
-              </span>
-              <span className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-3 sm:px-4 py-2 rounded-full text-sm">
-                TailwindCSS
-              </span>
-              <span className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-3 sm:px-4 py-2 rounded-full text-sm">
-                GitHub
-              </span>
+              {skills.map((skill) => {
+                const Icon = skill.icon;
+                return (
+                  <span
+                    key={skill.name}
+                    className="flex items-center gap-2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-3 sm:px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-md cursor-default group"
+                  >
+                    <Icon className={`w-4 h-4 ${skill.color} transition-transform duration-300 group-hover:rotate-6`} />
+                    {skill.name}
+                  </span>
+                );
+              })}
             </div>
           </div>
 

@@ -7,7 +7,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="min-h-screen flex items-center bg-gray-50 dark:bg-gray-800 transition-colors duration-300"
+      className="min-h-screen flex items-center bg-gray-50 dark:bg-gray-950 transition-colors duration-300"
     >
       <div className="max-w-6xl mx-auto px-6 w-full">
         <div className="text-center mb-16">

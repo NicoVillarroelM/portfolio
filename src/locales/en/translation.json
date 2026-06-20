@@ -5,7 +5,7 @@
     "projects": "Projects",
     "contact": "Contact"
   },
-   "hero": {
+  "hero": {
     "title": "Hello, I'm",
     "subtitle": "Frontend Developer",
     "description": "UX/UI Designer and frontend developer passionate about creating exceptional and functional digital experiences.",
@@ -22,10 +22,12 @@
   "projects": {
     "title": "Projects",
     "subtitle": "A selection of projects showcasing my UX/UI design and frontend development expertise.",
+    "viewProject": "View Project",
+    "comingSoon": "Private repository",
     "list": [
       {
         "title": "Altyro Logistics SPA",
-        "description": "FullStack Developer. Development of a logistics web app for real-time tracking and management. Created modules using Angular, TS, Firebase; integrated HERE maps and security flow. Agile methodologies."
+        "description": "FullStack Developer. Development of a logistics web app for real-time tracking and management. Created modules using Angular, TS, Firebase; integrated HERE maps and security flow."
       },
       {
         "title": "Inventory System",

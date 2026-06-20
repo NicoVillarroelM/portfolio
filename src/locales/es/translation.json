@@ -5,14 +5,14 @@
     "projects": "Proyectos",
     "contact": "Contacto"
   },
-   "hero": {
+  "hero": {
     "title": "Hola, soy",
     "subtitle": "Desarrollador Frontend",
     "description": "Diseñador UX/UI y desarrollador frontend apasionado por crear experiencias digitales excepcionales y funcionales.",
     "viewWork": "Conoce mi trabajo",
     "downloadCV": "Descargar CV"
   },
- "about": {
+  "about": {
     "title": "Sobre mí",
     "description": "Soy un desarrollador frontend con experiencia en la creación de aplicaciones web modernas y responsivas. Me encanta aprender nuevas tecnologías y mejorar mis habilidades constantemente.",
     "paragraph1": "Soy desarrollador web con formación académica y aprendizaje autodidacta, apasionado por crear aplicaciones modernas, funcionales y visualmente atractivas.",
@@ -22,10 +22,12 @@
   "projects": {
     "title": "Proyectos",
     "subtitle": "Una selección de proyectos que demuestran mi experiencia en diseño UX/UI y desarrollo frontend.",
+    "viewProject": "Ver proyecto",
+    "comingSoon": "Repositorio privado",
     "list": [
       {
         "title": "Altyro Logistics SPA",
-        "description": "Desarrollador FullStack. Desarrollo de aplicación web logística para optimizar gestión y seguimiento en tiempo real. Creación de módulos (Angular, TS, Firebase), integración de mapas (HERE maps) y seguridad. Trabajo con metodologías ágiles."
+        "description": "Desarrollador Frontend. Desarrollo de aplicación web logística para optimizar gestión y seguimiento en tiempo real. Creación de módulos (Angular, TS, Firebase), integración de mapas (HERE maps) y seguridad."
       },
       {
         "title": "Sistema inventario",
