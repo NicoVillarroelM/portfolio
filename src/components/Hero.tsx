@@ -1,36 +1,34 @@
-import { ArrowDown, Download, Github, Linkedin } from "lucide-react";
-import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { motion, useScroll, useTransform, useSpring, type MotionValue } from "framer-motion";
+import { Download, ArrowDown } from "lucide-react";
+import { useRef } from "react";
 import Button from "../buttons/Button";
 import { useTranslation } from "react-i18next";
 import CV from "../utils/CV-NicoVillarroel.pdf";
 
 const Hero = () => {
   const { t } = useTranslation();
-  const [displayedText, setDisplayedText] = useState("");
-  const [showName, setShowName] = useState(false);
-  const fullText = t("hero.title");
-  const name = "Nicolás Villarroel";
+  const ref = useRef<HTMLElement>(null);
 
-  useEffect(() => {
-    let index = 0;
-    const timer = setInterval(() => {
-      if (index < fullText.length) {
-        setDisplayedText(fullText.slice(0, index + 1));
-        index++;
-      } else {
-        clearInterval(timer);
-        setTimeout(() => setShowName(true), 300);
-      }
-    }, 100);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
 
-    return () => clearInterval(timer);
-  }, [fullText]);
+  const smooth = useSpring(scrollYProgress, {
+    stiffness: 60,
+    damping: 20,
+    mass: 0.6,
+  });
 
-  const scrollToAbout = () => {
-    document.getElementById("projects")?.scrollIntoView({
-      behavior: "smooth",
-    });
+  const pt = useTransform(smooth, [0, 1], [6, 480]);
+  const faceVar = useTransform(
+    smooth,
+    (v) => `"wght" ${Math.round(400 + v * 500)}, "wdth" ${Math.round(100 + v * 25)}`
+  );
+  const ruleFill = useTransform(smooth, [0, 1], ["0%", "100%"]);
+
+  const scrollToProjects = () => {
+    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
   };
 
   const handleDownload = () => {
@@ -40,136 +38,114 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-900 transition-colors duration-300"
+      ref={ref}
+      className="relative min-h-screen flex flex-col paper-grain bg-paper text-ink transition-colors duration-300 overflow-hidden"
     >
-      <div className="max-w-4xl mx-auto px-6 text-center">
-        <div>
-          <div className="text-5xl md:text-7xl font-light text-gray-900 dark:text-white mb-6">
-            <motion.span
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-            >
-              {displayedText}
-              <motion.span
-                animate={{ opacity: [1, 0, 1] }}
-                transition={{ duration: 0.8, repeat: Infinity }}
-                className="border-r-2 border-gray-900 dark:border-white ml-1"
-              >
-                |
-              </motion.span>
-            </motion.span>
-            <br />
-            <motion.span
-              initial={{ opacity: 0, y: 20 }}
-              animate={showName ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent dark:from-blue-400 dark:to-purple-400"
-            >
-              {name}
-            </motion.span>
-          </div>
+      {/* crop marks */}
+      <span className="crop-mark top-3 left-3 border-t border-l" />
+      <span className="crop-mark top-3 right-3 border-t border-r" />
+      <span className="crop-mark bottom-3 left-3 border-b border-l" />
+      <span className="crop-mark bottom-3 right-3 border-b border-r" />
 
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={showName ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
-            className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed"
-          >
-            {t("hero.description")}
-          </motion.p>
+      {/* registration mark */}
+      <div className="reg-target absolute top-6 left-1/2 -translate-x-1/2 w-3 h-3" />
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={showName ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 1 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6"
-          >
-            <motion.div
-              whileHover={{ scale: 1.05, rotate: 1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Button
-                label={t("hero.viewWork")}
-                variant="dark"
-                onClick={scrollToAbout}
-              />
-            </motion.div>
+      {/* sheet id — top rule */}
+      <div className="flex items-center gap-4 px-6 md:px-10 pt-5 text-[11px] font-note tracking-widest uppercase text-ink-soft">
+        <span>{t("spec.proof")}</span>
+        <span className="tick-rule flex-1" />
+        <span className="hidden sm:inline">
+          {t("spec.sheet")} 1 {t("spec.of")} 4
+        </span>
+      </div>
 
-            <motion.div
-              whileHover={{ scale: 1.05, rotate: -1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Button
-                label={t("hero.downloadCV")}
-                icon={Download}
-                iconPosition="left"
-                onClick={handleDownload}
-                variant="outline"
-              />
-            </motion.div>
-          </motion.div>
+      {/* masthead */}
+      <div className="flex-1 flex flex-col items-center justify-center px-6 md:px-10 py-10 text-center">
+        <p className="font-note text-xs md:text-sm tracking-[0.3em] uppercase text-vermilion mb-6">
+          {t("hero.title")}
+        </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={showName ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 1.3 }}
-            className="flex gap-4 justify-center"
-          >
-            <motion.a
-              initial={{ opacity: 0, scale: 0 }}
-              animate={showName ? { opacity: 1, scale: 1 } : {}}
-              transition={{
-                duration: 0.5,
-                delay: 1.6,
-                type: "spring",
-                stiffness: 200,
-              }}
-              whileHover={{ scale: 1.2, rotate: 10 }}
-              whileTap={{ scale: 0.9 }}
-              href="https://github.com/NicoVillarroelM"
-              className="p-3 rounded-full border border-gray-300 dark:border-gray-600 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:border-gray-400 dark:hover:border-gray-400 transition-all duration-300"
-            >
-              <Github className="w-5 h-5" />
-            </motion.a>
-
-            <motion.a
-              initial={{ opacity: 0, scale: 0 }}
-              animate={showName ? { opacity: 1, scale: 1 } : {}}
-              transition={{
-                duration: 0.5,
-                delay: 1.8,
-                type: "spring",
-                stiffness: 200,
-              }}
-              whileHover={{ scale: 1.2, rotate: -10 }}
-              whileTap={{ scale: 0.9 }}
-              href="https://www.linkedin.com/in/nicol%C3%A1s-villarroel-meza-045b71257/"
-              className="p-3 rounded-full border border-gray-300 text-gray-600 hover:text-gray-900 hover:border-gray-400 
-               dark:border-gray-600 dark:text-gray-300 dark:hover:text-white dark:hover:border-gray-400 
-               transition-all duration-300"
-            >
-              <Linkedin className="w-5 h-5" />
-            </motion.a>
-          </motion.div>
-        </div>
-
-        <motion.div
+        <motion.h1
+          style={{ fontVariationSettings: faceVar }}
+          className="font-face leading-none tracking-tight text-ink select-none"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          transition={{ duration: 0.6 }}
         >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <ArrowDown className="w-6 h-6 text-gray-400 dark:text-gray-500 transition-colors duration-300" />
-          </motion.div>
+          <span className="text-[clamp(1.7rem,7.5vw,7rem)]">
+            {t("spec.masthead")}
+          </span>
+        </motion.h1>
+
+        <p className="mt-4 font-note text-sm md:text-base tracking-[0.4em] uppercase text-ink-soft">
+          {t("hero.subtitle")}
+        </p>
+
+        <p className="mt-6 max-w-md md:max-w-lg text-base md:text-lg text-ink-soft leading-relaxed">
+          {t("hero.description")}
+        </p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-10 flex flex-col sm:flex-row gap-4 items-center"
+        >
+          <Button
+            label={t("hero.viewWork")}
+            variant="dark"
+            onClick={scrollToProjects}
+          />
+          <Button
+            label={t("hero.downloadCV")}
+            icon={Download}
+            iconPosition="left"
+            onClick={handleDownload}
+            variant="outline"
+          />
         </motion.div>
       </div>
+
+      {/* scale ruler — live pt + fill */}
+      <div className="absolute right-0 top-0 bottom-0 w-10 md:w-12 flex flex-col items-center justify-between py-24 border-l border-hairline-faint">
+        <span className="font-note text-[10px] tracking-widest text-ink-soft rotate-90 origin-center whitespace-nowrap uppercase">
+          {t("spec.ptRange")}
+        </span>
+        <div className="relative flex-1 w-px bg-hairline-faint my-3">
+          <motion.div
+            style={{ height: ruleFill }}
+            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0.5 bg-vermilion"
+          />
+        </div>
+        <motion.span className="font-face font-bold text-lg md:text-xl text-vermilion tabular-nums">
+          <PtReadout value={pt} />
+        </motion.span>
+        <span className="font-note text-[10px] tracking-widest text-ink-soft uppercase">
+          PT
+        </span>
+      </div>
+
+      {/* scroll hint */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.6 }}
+        className="pb-8 flex flex-col items-center gap-2"
+      >
+        <motion.div
+          animate={{ y: [0, 6, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <ArrowDown className="w-5 h-5 text-ink-soft" />
+        </motion.div>
+      </motion.div>
     </section>
   );
+};
+
+const PtReadout = ({ value }: { value: MotionValue<number> }) => {
+  const rounded = useTransform(value, (v) => Math.round(v));
+  return <motion.span>{rounded}</motion.span>;
 };
 
 export default Hero;

@@ -8,7 +8,7 @@
   "hero": {
     "title": "Hola, soy",
     "subtitle": "Desarrollador Frontend",
-    "description": "Diseñador UX/UI y desarrollador frontend apasionado por crear experiencias digitales excepcionales y funcionales.",
+    "description": "Desarrollador frontend apasionado por crear experiencias digitales excepcionales y funcionales.",
     "viewWork": "Conoce mi trabajo",
     "downloadCV": "Descargar CV"
   },
@@ -26,7 +26,7 @@
     "list": [
       {
         "title": "Altyro Logistics SPA",
-        "description": "Desarrollador Frontend. Desarrollo de aplicación web logística para optimizar gestión y seguimiento en tiempo real. Creación de módulos (Angular, TS, Firebase), integración de mapas (HERE maps) y seguridad."
+        "description": "Desarrollo de aplicación web logística para optimizar gestión y seguimiento en tiempo real. Creación de módulos (Angular, TS, Firebase), integración de mapas (HERE maps) y seguridad."
       },
       {
         "title": "Sistema inventario",
@@ -48,7 +48,6 @@
   },
   "contact": {
     "title": "Contáctame",
-    "subtitle": "Si tienes una oportunidad laboral o proyecto interesante, me encantaría conocer más detalles.",
     "cards": {
       "github": {
         "label": "GitHub",
@@ -61,8 +60,38 @@
       "email": {
         "label": "Email",
         "address": "mezanicolas10@gmail.com"
-      }
+      },
+      "contact": "CONTÁCTAME"
     },
     "footerText": "Estoy abierto a nuevas oportunidades laborales y colaboraciones en proyectos innovadores. No dudes en contactarme para discutir posibles colaboraciones."
+  },
+  "spec": {
+    "masthead": "NICOLÁS VILLARROEL",
+    "subline": "UNA FUENTE DE FRONTEND",
+    "sheet": "PÁGINA",
+    "of": "DE",
+    "ptRange": "6–480 PT",
+    "okToPrint": "OK PARA IMPRIMIR",
+    "proof": "MUESTRA TIPOGRÁFICA",
+    "faceLabel": "DESARROLLADOR WEB",
+    "anatomyKicker": "PÁGINA 01 — SOBRE MÍ",
+    "anatomyTitle": "SOBRE MÍ",
+    "weightsTitle": "HABILIDADES",
+    "weightsKicker": "PÁGINA 02 — HABILIDADES",
+    "glyphsTitle": "PROYECTOS",
+    "glyphsKicker": "PÁGINA 03 — TRABAJO",
+    "orderTitle": "CONTACTO",
+    "orderKicker": "PÁGINA 04 — CONTACTO",
+    "reveal": "REVELAR",
+    "reverse": "REVERSO",
+    "setIn": "COMPUESTO EN",
+    "status": "ESTADO",
+    "open": "CONFIRMADO",
+    "private": "REPOSITORIO PRIVADO",
+    "visit": "VISITAR",
+    "folio": "FOLIO",
+    "colophon": "CADA PROYECTO ES UNA NUEVA OPORTUNIDAD",
+    "cvNote": "PIEZA ANEXA",
+    "lede": "Detrás de cada pantalla hay dedicación y detalle."
   }
 }

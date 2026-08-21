@@ -1,3 +1,135 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --paper: #f1ecdf;
+  --paper-deep: #e7e0cd;
+  --ink: #1a160f;
+  --ink-soft: #5a5344;
+  --vermilion: #d6421d;
+  --gold: #a97f2f;
+  --green: #2f5d3c;
+  --hairline: rgba(26, 22, 15, 0.3);
+  --hairline-faint: rgba(26, 22, 15, 0.14);
+}
+
+.dark {
+  --paper: #15120c;
+  --paper-deep: #1d1910;
+  --ink: #efe6cd;
+  --ink-soft: #9c937c;
+  --vermilion: #ff5c35;
+  --gold: #d4ab55;
+  --green: #7fae8d;
+  --hairline: rgba(239, 230, 205, 0.3);
+  --hairline-faint: rgba(239, 230, 205, 0.14);
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-deep: var(--paper-deep);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-vermilion: var(--vermilion);
+  --color-gold: var(--gold);
+  --color-green: var(--green);
+  --color-hairline: var(--hairline);
+  --color-hairline-faint: var(--hairline-faint);
+  --font-face: "Archivo", system-ui, sans-serif;
+  --font-note: "Fragment Mono", ui-monospace, monospace;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Archivo", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* paper grain — a very faint proof-paper tooth */
+.paper-grain {
+  background-image: radial-gradient(
+    var(--hairline-faint) 0.5px,
+    transparent 0.5px
+  );
+  background-size: 5px 5px;
+}
+
+/* specimen sheet fold shadow for the masthead */
+.sheet-fold {
+  box-shadow: inset 0 -1px 0 var(--hairline),
+    0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* crop marks drawn as corner brackets */
+.crop-mark {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-color: var(--hairline);
+  pointer-events: none;
+}
+
+/* registration target */
+.reg-target::before,
+.reg-target::after {
+  content: "";
+  position: absolute;
+  background: var(--vermilion);
+}
+.reg-target::before {
+  width: 2px;
+  height: 14px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.reg-target::after {
+  width: 14px;
+  height: 2px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* perforation / tick rule */
+.tick-rule {
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--ink) 0,
+    var(--ink) 1px,
+    transparent 1px,
+    transparent 9px
+  );
+  height: 1px;
+}
+
+/* 3d flip helpers */
+.perspective-1200 {
+  perspective: 1200px;
+}
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

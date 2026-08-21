@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Globe, Check, ChevronDown } from "lucide-react";
+import { Globe } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { languages } from "../constants/Languages";
 
@@ -33,25 +33,25 @@ const LanguageSwitcher: React.FC = () => {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={toggleDropdown}
-        className="flex items-center gap-1 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+        className="flex items-center gap-1 p-2 border border-hairline text-ink-soft hover:text-vermilion hover:border-vermilion transition-all duration-200 cursor-pointer"
         aria-label="Change language"
       >
-        <Globe className="w-5 h-5 text-gray-700 dark:text-gray-300" />
-        <ChevronDown className="w-4 h-4 text-gray-500 dark:text-gray-400" />
+        <Globe className="w-4 h-4" />
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-32 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded shadow-md z-50">
+        <div className="absolute left-1/2 -translate-x-1/2 mt-2 w-12 bg-paper border border-hairline shadow-sm z-50 overflow-hidden">
           {languages.map((lang) => (
             <button
               key={lang.code}
               onClick={() => handleLanguageChange(lang.code)}
-              className="flex items-center justify-between w-full px-4 py-2 text-sm text-left text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
+              className={`flex items-center justify-center w-full px-2 py-1.5 font-note text-sm text-center uppercase transition-colors cursor-pointer ${
+                i18n.language === lang.code
+                  ? "font-bold text-vermilion bg-paper-deep"
+                  : "text-ink-soft hover:bg-paper-deep hover:text-ink"
+              }`}
             >
               {lang.label}
-              {i18n.language === lang.code && (
-                <Check className="w-4 h-4 text-blue-500" />
-              )}
             </button>
           ))}
         </div>

@@ -58,7 +58,7 @@ export const projects = [
       titleKey: "projects.list.4.title",
       descriptionKey: "projects.list.4.description",
       image: proyecto4,
-      tags: ["html", "CSS", "JavaScript"],
+      tags: ["html", "CSS", "JavaScript", "WebFlow"],
       link: "https://www.logisticplus.cl/",
        colors: {
       light: "text-blue-600",

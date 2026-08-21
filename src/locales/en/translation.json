@@ -8,7 +8,7 @@
   "hero": {
     "title": "Hello, I'm",
     "subtitle": "Frontend Developer",
-    "description": "UX/UI Designer and frontend developer passionate about creating exceptional and functional digital experiences.",
+    "description": "Frontend developer passionate about creating exceptional and functional digital experiences.",
     "viewWork": "My projects",
     "downloadCV": "Download CV"
   },
@@ -26,7 +26,7 @@
     "list": [
       {
         "title": "Altyro Logistics SPA",
-        "description": "FullStack Developer. Development of a logistics web app for real-time tracking and management. Created modules using Angular, TS, Firebase; integrated HERE maps and security flow."
+        "description": "Web developer. Development of a logistics web app for real-time tracking and management. Created modules using Angular, TS, Firebase; integrated HERE maps and security flow."
       },
       {
         "title": "Inventory System",
@@ -48,7 +48,6 @@
   },
   "contact": {
     "title": "Contact Me",
-    "subtitle": "If you have a job opportunity or interesting project, I'd love to hear the details.",
     "cards": {
       "github": {
         "label": "GitHub",
@@ -61,8 +60,38 @@
       "email": {
         "label": "Email",
         "address": "mezanicolas10@gmail.com"
-      }
+      },
+      "contact": "CONTACT ME"
     },
     "footerText": "I'm open to new job opportunities and collaborations on innovative projects. Feel free to contact me to discuss potential collaborations."
+  },
+  "spec": {
+    "masthead": "NICOLÁS VILLARROEL",
+    "subline": "A FRONTEND FACE",
+    "sheet": "PAGE",
+    "of": "OF",
+    "ptRange": "6–480 PT",
+    "okToPrint": "OK TO PRINT",
+    "proof": "TYPOGRAPHIC SPECIMEN",
+    "faceLabel": "WEB DEVELOPER",
+    "anatomyKicker": "PAGE 01 — ABOUT",
+    "anatomyTitle": "ABOUT",
+    "weightsTitle": "SKILLS",
+    "weightsKicker": "PAGE 02 — SKILLS",
+    "glyphsTitle": "PROJECTS",
+    "glyphsKicker": "PAGE 03 — WORK",
+    "orderTitle": "CONTACT",
+    "orderKicker": "PAGE 04 — CONTACT",
+    "reveal": "REVEAL",
+    "reverse": "REVERSE",
+    "setIn": "SET IN",
+    "status": "STATUS",
+    "open": "CONFIRMED",
+    "private": "PRIVATE REPO",
+    "visit": "VISIT",
+    "folio": "FOLIO",
+    "colophon": "EVERY PROJECT IS A NEW OPPORTUNITY",
+    "cvNote": "ENCLOSED PIECE",
+    "lede": "Behind every screen there is dedication and detail."
   }
 }
