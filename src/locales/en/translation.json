@@ -7,23 +7,41 @@
   },
   "hero": {
     "title": "Hello, I'm",
-    "subtitle": "Frontend Developer",
-    "description": "Frontend developer passionate about creating exceptional and functional digital experiences.",
+    "subtitle": "Frontend · Full Stack Developer",
+    "description": "Frontend-specialized developer with strong Full Stack experience, desktop applications, and AI-augmented workflows to build scalable, functional digital products.",
     "viewWork": "My projects",
     "downloadCV": "Download CV"
   },
   "about": {
     "title": "About Me",
-    "description": "I am a frontend developer with experience in building modern and responsive web applications. I love learning new technologies and constantly improving my skills.",
-    "paragraph1": "I am a web developer with academic training and self-taught learning, passionate about creating modern, functional and visually appealing applications.",
-    "paragraph2": "I currently specialize in technologies such as React, Angular, TypeScript, Tailwind CSS and tools like Swagger for documentation and Git for version control. I focus on applying good development practices, maintaining clean and scalable code.",
-    "imageAlt": "Nicolas Villarroel - Web Developer"
+    "description": "Spanish (Native) · English (A2 – Technical) — Clean code, scalable architecture, and attention to detail.",
+    "paragraph1": "I am a web developer with academic training and continuous self-learning, specializing in the Frontend ecosystem (Angular, React, Next.js, TypeScript, Tailwind CSS, Webflow) and desktop application development with Electron.js.",
+    "paragraph2": "I have expanded my scope into Full Stack development and software architecture, building modular backends with Node.js, NestJS, and Express, SQL/PostgreSQL databases with Prisma, Supabase, and Firebase, applying Hexagonal Architecture, Monorepos, Kanban/Trello workflows, and CI/CD pipelines (SonarQube, OWASP). I augment my engineering workflow with AI tools (Claude, GPT, Antigravity CLI, Skills, Harness), Docker environments, and IT support & network diagnostics.",
+    "imageAlt": "Nicolás Villarroel - Frontend & Full Stack Developer",
+    "cuts": [
+      { "name": "Angular · React · Next.js", "weight": 800, "note": "FRONTEND & UI" },
+      { "name": "TypeScript · Tailwind · Electron.js", "weight": 700, "note": "WEB & DESKTOP" },
+      { "name": "NestJS · Node.js · Express", "weight": 900, "note": "BACKEND & REST APIS" },
+      { "name": "Prisma · PostgreSQL · Supabase", "weight": 600, "note": "DATA & FIREBASE" },
+      { "name": "Hexagonal · Monorepo · CI/CD", "weight": 700, "note": "SONARQUBE · OWASP" },
+      { "name": "Docker · Git · Render · Postman", "weight": 500, "note": "DEVOPS & CLOUD" },
+      { "name": "Claude · GPT · Antigravity CLI", "weight": 400, "note": "SKILLS · HARNESS · AI" },
+      { "name": "IT Support · Networks · Hardware", "weight": 500, "note": "DIAGNOSTICS & SYSTEMS" }
+    ]
   },
   "projects": {
     "title": "Projects",
     "viewProject": "View Project",
     "comingSoon": "Private repository",
     "list": [
+      {
+        "title": "ClipDev",
+        "description": "Windows desktop application (100% offline and private) featuring a smart clipboard manager with semantic detection (code, URLs, Hex/RGB colors), a rich-text (WYSIWYG) notepad, global shortcut access, and hardened Electron security."
+      },
+      {
+        "title": "Fidelity Wallet",
+        "description": "B2B2C digital loyalty SaaS platform built in a monorepo. Issues stamp and points cards for Google and Apple Wallet via QR without app installs, with an HMAC-validated web scanner, transactional FIFO redemptions, and a multi-branch panel. Cloud deployment with frontend on Vercel and backend on Render."
+      },
       {
         "title": "Altyro Logistics SPA",
         "description": "Web developer. Development of a logistics web app for real-time tracking and management. Created modules using Angular, TS, Firebase; integrated HERE maps and security flow."
@@ -74,12 +92,12 @@
     "okToPrint": "OK TO PRINT",
     "proof": "TYPOGRAPHIC SPECIMEN",
     "faceLabel": "WEB DEVELOPER",
-    "anatomyKicker": "PAGE 01 — ABOUT",
+    "anatomyKicker": "PAGE 02 — ABOUT",
     "anatomyTitle": "ABOUT",
-    "weightsTitle": "SKILLS",
+    "weightsTitle": "SKILLS & STACK",
     "weightsKicker": "PAGE 02 — SKILLS",
-    "glyphsTitle": "PROJECTS",
     "glyphsKicker": "PAGE 03 — WORK",
+    "glyphsTitle": "PROJECTS",
     "orderTitle": "CONTACT",
     "orderKicker": "PAGE 04 — CONTACT",
     "reveal": "REVEAL",
@@ -92,6 +110,7 @@
     "folio": "FOLIO",
     "colophon": "EVERY PROJECT IS A NEW OPPORTUNITY",
     "cvNote": "ENCLOSED PIECE",
-    "lede": "Behind every screen there is dedication and detail."
+    "lede": "Behind every screen there is dedication and detail.",
+    "imagePending": "16:10 PREVIEW PENDING"
   }
 }

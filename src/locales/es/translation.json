@@ -7,23 +7,41 @@
   },
   "hero": {
     "title": "Hola, soy",
-    "subtitle": "Desarrollador Frontend",
-    "description": "Desarrollador frontend apasionado por crear experiencias digitales excepcionales y funcionales.",
+    "subtitle": "Desarrollador Frontend · Full Stack",
+    "description": "Desarrollador especializado en Frontend con sólida experiencia Full Stack, aplicaciones de escritorio e integración de herramientas de IA para construir productos escalables y funcionales.",
     "viewWork": "Conoce mi trabajo",
     "downloadCV": "Descargar CV"
   },
   "about": {
     "title": "Sobre mí",
-    "description": "Soy un desarrollador frontend con experiencia en la creación de aplicaciones web modernas y responsivas. Me encanta aprender nuevas tecnologías y mejorar mis habilidades constantemente.",
-    "paragraph1": "Soy desarrollador web con formación académica y aprendizaje autodidacta, apasionado por crear aplicaciones modernas, funcionales y visualmente atractivas.",
-    "paragraph2": "Actualmente me especializo en tecnologías como React, Angular, TypeScript, Tailwind CSS y herramientas como Swagger para documentación y Git para control de versiones. Me enfoco en aplicar buenas prácticas de desarrollo, manteniendo un código limpio y escalable.",
-    "imageAlt": "Nicolás Villarroel - Desarrollador Web"
+    "description": "Español (Nativo) · Inglés (A2 – Técnico) — Código limpio, arquitectura escalable y atención al detalle.",
+    "paragraph1": "Soy desarrollador web con formación académica y aprendizaje continuo, especializado en el ecosistema Frontend (Angular, React, Next.js, TypeScript, Tailwind CSS, Webflow) y en el desarrollo de aplicaciones de escritorio con Electron.js.",
+    "paragraph2": "He expandido mi alcance hacia el desarrollo Full Stack y arquitectura de software, construyendo backends modulares con Node.js, NestJS y Express, bases de datos SQL/PostgreSQL con Prisma, Supabase y Firebase, aplicando Arquitectura Hexagonal, Monorepos, gestión Kanban/Trello y pipelines CI/CD (SonarQube, OWASP). Complemento mi flujo de ingeniería con herramientas de IA (Claude, GPT, Antigravity CLI, Skills, Harness), entornos Docker y experiencia en soporte TI, diagnóstico y redes.",
+    "imageAlt": "Nicolás Villarroel - Desarrollador Frontend y Full Stack",
+    "cuts": [
+      { "name": "Angular · React · Next.js", "weight": 800, "note": "FRONTEND & UI" },
+      { "name": "TypeScript · Tailwind · Electron.js", "weight": 700, "note": "WEB & DESKTOP" },
+      { "name": "NestJS · Node.js · Express", "weight": 900, "note": "BACKEND & REST APIS" },
+      { "name": "Prisma · PostgreSQL · Supabase", "weight": 600, "note": "DATOS & FIREBASE" },
+      { "name": "Hexagonal · Monorepo · CI/CD", "weight": 700, "note": "SONARQUBE · OWASP" },
+      { "name": "Docker · Git · Render · Postman", "weight": 500, "note": "DEVOPS & CLOUD" },
+      { "name": "Claude · GPT · Antigravity CLI", "weight": 400, "note": "SKILLS · HARNESS · IA" },
+      { "name": "Soporte TI · Redes · Hardware", "weight": 500, "note": "DIAGNÓSTICO & SISTEMAS" }
+    ]
   },
   "projects": {
     "title": "Proyectos",
     "viewProject": "Ver proyecto",
     "comingSoon": "Repositorio privado",
     "list": [
+      {
+        "title": "ClipDev",
+        "description": "Aplicación de escritorio para Windows (100% offline y privada) con gestor inteligente de portapapeles, detección semántica de código, URLs y colores (Hex/RGB), bloc de notas enriquecido (WYSIWYG), atajo global y arquitectura segura en Electron."
+      },
+      {
+        "title": "Fidelity Wallet",
+        "description": "Plataforma SaaS B2B2C de fidelización digital en monorepo. Emisión de tarjetas de sellos y puntos para Google y Apple Wallet vía QR sin instalar apps, escáner web con validación HMAC, canje FIFO transaccional y panel multi-sucursal. Despliegue en la nube con frontend en Vercel y backend en Render."
+      },
       {
         "title": "Altyro Logistics SPA",
         "description": "Desarrollo de aplicación web logística para optimizar gestión y seguimiento en tiempo real. Creación de módulos (Angular, TS, Firebase), integración de mapas (HERE maps) y seguridad."
@@ -74,12 +92,12 @@
     "okToPrint": "OK PARA IMPRIMIR",
     "proof": "MUESTRA TIPOGRÁFICA",
     "faceLabel": "DESARROLLADOR WEB",
-    "anatomyKicker": "PÁGINA 01 — SOBRE MÍ",
+    "anatomyKicker": "PÁGINA 02 — SOBRE MÍ",
     "anatomyTitle": "SOBRE MÍ",
-    "weightsTitle": "HABILIDADES",
+    "weightsTitle": "HABILIDADES & STACK",
     "weightsKicker": "PÁGINA 02 — HABILIDADES",
-    "glyphsTitle": "PROYECTOS",
     "glyphsKicker": "PÁGINA 03 — TRABAJO",
+    "glyphsTitle": "PROYECTOS",
     "orderTitle": "CONTACTO",
     "orderKicker": "PÁGINA 04 — CONTACTO",
     "reveal": "REVELAR",
@@ -92,6 +110,7 @@
     "folio": "FOLIO",
     "colophon": "CADA PROYECTO ES UNA NUEVA OPORTUNIDAD",
     "cvNote": "PIEZA ANEXA",
-    "lede": "Detrás de cada pantalla hay dedicación y detalle."
+    "lede": "Detrás de cada pantalla hay dedicación y detalle.",
+    "imagePending": "CAPTURA 16:10 PENDIENTE"
   }
 }

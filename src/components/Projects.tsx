@@ -1,20 +1,7 @@
 import { useTranslation } from "react-i18next";
-import { projects } from "../constants/Projects";
-import {
-  SiReact,
-  SiTypescript,
-  SiAngular,
-  SiFirebase,
-  SiPython,
-  SiDjango,
-  SiHtml5,
-  SiCss,
-  SiJavascript,
-  SiTailwindcss,
-  SiWebflow,
-} from "react-icons/si";
-import { FaDatabase } from "react-icons/fa";
-import { ExternalLink, MapPin } from "lucide-react";
+import { projects, type ProjectItem } from "../constants/Projects";
+import { getTechIcon } from "../utils/techIcons";
+import { ExternalLink } from "lucide-react";
 import { motion, type Variants } from "framer-motion";
 import { useState } from "react";
 
@@ -28,46 +15,11 @@ const cardVariants: Variants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
-const getTagIcon = (tag: string) => {
-  const normalized = tag.toLowerCase().trim();
-  switch (normalized) {
-    case "react":
-      return { icon: SiReact, color: "text-[#61DAFB]" };
-    case "typescript":
-      return { icon: SiTypescript, color: "text-[#3178C6]" };
-    case "angular":
-      return { icon: SiAngular, color: "text-[#DD0031]" };
-    case "firebase":
-      return { icon: SiFirebase, color: "text-[#FFCA28]" };
-    case "python":
-      return { icon: SiPython, color: "text-[#3776AB]" };
-    case "django":
-      return { icon: SiDjango, color: "text-[#092E20] dark:text-[#44B78B]" };
-    case "sql":
-      return { icon: FaDatabase, color: "text-[#00758F]" };
-    case "tailwind":
-    case "tailwindcss":
-      return { icon: SiTailwindcss, color: "text-[#06B6D4]" };
-    case "html":
-      return { icon: SiHtml5, color: "text-[#E34F26]" };
-    case "css":
-      return { icon: SiCss, color: "text-[#1572B6]" };
-    case "javascript":
-      return { icon: SiJavascript, color: "text-[#F7DF1E]" };
-    case "here maps":
-      return { icon: MapPin, color: "text-[#00B0FF]" };
-    case "webflow":
-      return { icon: SiWebflow, color: "text-[#4353FF]" };
-    default:
-      return null;
-  }
-};
-
 const GlyphSheet = ({
   project,
   index,
 }: {
-  project: (typeof projects)[number];
+  project: ProjectItem;
   index: number;
 }) => {
   const { t } = useTranslation();
@@ -77,9 +29,10 @@ const GlyphSheet = ({
   return (
     <motion.div variants={cardVariants} className="h-full">
       <div
-        className="perspective-1200 h-full"
+        className="perspective-1200 h-full cursor-pointer"
         onMouseEnter={() => setFlipped(true)}
         onMouseLeave={() => setFlipped(false)}
+        onClick={() => setFlipped((prev) => !prev)}
       >
         <div
           className="preserve-3d relative h-full transition-transform duration-700 ease-out"
@@ -88,12 +41,27 @@ const GlyphSheet = ({
           {/* FRONT — the glyph */}
           <div className="backface-hidden relative flex flex-col h-full bg-paper border border-hairline shadow-sm">
             <div className="relative overflow-hidden aspect-[16/10] bg-paper-deep border-b border-hairline-faint">
-              <img
-                src={project.image}
-                alt={t(project.titleKey ?? "")}
-                loading="lazy"
-                className="w-full h-full object-cover object-center"
-              />
+              {project.image ? (
+                <img
+                  src={project.image}
+                  alt={t(project.titleKey ?? "")}
+                  loading="lazy"
+                  className="w-full h-full object-cover object-center"
+                />
+              ) : (
+                <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center paper-grain relative">
+                  <div className="reg-target absolute top-3 right-3 w-3 h-3" />
+                  <span className="font-note text-[10px] uppercase tracking-[0.25em] text-vermilion mb-2">
+                    {project.placeholderCode ?? t("spec.proof")}
+                  </span>
+                  <span className="font-face font-extrabold text-2xl sm:text-3xl tracking-tight text-ink">
+                    {t(project.titleKey ?? "")}
+                  </span>
+                  <span className="mt-3 font-note text-[10px] uppercase tracking-widest text-ink-soft border border-hairline-faint bg-paper/80 px-2.5 py-1">
+                    {t("spec.imagePending")} · 1280×800 PX
+                  </span>
+                </div>
+              )}
               <span className="absolute top-3 left-3 font-note text-[10px] tabular-nums uppercase tracking-widest text-ink bg-paper/90 px-2 py-1 border border-hairline">
                 PROYECTO {String(index + 1).padStart(2, "0")}
               </span>
@@ -106,7 +74,7 @@ const GlyphSheet = ({
 
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.tags.map((tag) => {
-                  const iconInfo = getTagIcon(tag);
+                  const iconInfo = getTechIcon(tag);
                   const Icon = iconInfo?.icon;
                   return (
                     <span
@@ -140,21 +108,15 @@ const GlyphSheet = ({
                 {t("spec.reverse")}
               </span>
 
-              <h3 className="font-face font-bold text-xl leading-tight mb-4">
+              <h3 className="font-face font-bold text-xl leading-tight mb-3">
                 {t(project.titleKey ?? "")}
               </h3>
 
-              <p className="text-sm text-paper/80 leading-relaxed mb-5 flex-grow">
+              <p className="text-xs sm:text-sm text-paper/80 leading-relaxed mb-4 flex-grow overflow-y-auto">
                 {t(project.descriptionKey ?? "")}
               </p>
 
-              <div className="border-t border-paper/20 pt-4 space-y-2 font-note text-[11px] uppercase tracking-widest">
-                <div className="flex justify-between gap-4">
-                  <span className="text-paper/60">{t("spec.setIn")}</span>
-                  <span className="text-right text-paper tabular-nums">
-                    {project.tags.join(" · ")}
-                  </span>
-                </div>
+              <div className="border-t border-paper/20 pt-3 space-y-2 font-note text-[10px] sm:text-[11px] uppercase tracking-widest">
                 <div className="flex justify-between gap-4">
                   <span className="text-paper/60">{t("spec.status")}</span>
                   <span
@@ -172,7 +134,8 @@ const GlyphSheet = ({
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-5 inline-flex items-center justify-center gap-2 bg-vermilion text-paper font-bold font-note text-xs uppercase tracking-[0.25em] px-4 py-3 hover:bg-gold hover:text-ink transition-colors duration-200"
+                  onClick={(e) => e.stopPropagation()}
+                  className="mt-4 inline-flex items-center justify-center gap-2 bg-vermilion text-paper font-bold font-note text-xs uppercase tracking-[0.25em] px-4 py-2.5 hover:bg-gold hover:text-ink transition-colors duration-200"
                 >
                   <ExternalLink className="w-4 h-4" />
                   {t("spec.visit")}

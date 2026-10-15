@@ -12,17 +12,16 @@ const itemVariants: Variants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
-const cuts = [
-  { name: "React", weight: 700, note: "COMPONENTES" },
-  { name: "Angular", weight: 600, note: "MÓDULOS" },
-  { name: "TypeScript", weight: 800, note: "TIPADO SEGURO" },
-  { name: "Tailwind CSS", weight: 500, note: "ESTILOS ÁGILES" },
-  { name: "Python · Django", weight: 900, note: "BACKEND" },
-  { name: "Git · Swagger", weight: 400, note: "DOCUMENTACIÓN" },
-];
+interface CutItem {
+  name: string;
+  weight: number;
+  note: string;
+}
 
 const About = () => {
   const { t } = useTranslation();
+
+  const cuts = t("about.cuts", { returnObjects: true }) as CutItem[];
 
   return (
     <section
@@ -130,34 +129,35 @@ const About = () => {
             </motion.p>
 
             <div className="border-t border-hairline">
-              {cuts.map((cut, i) => (
-                <motion.div
-                  key={cut.name}
-                  variants={itemVariants}
-                  className="group flex items-baseline justify-between gap-4 border-b border-hairline-faint py-5 hover:bg-paper transition-colors duration-200 px-3 -mx-3"
-                >
-                  <div className="flex items-baseline gap-3 min-w-0">
-                    <span className="font-note text-[10px] tabular-nums text-ink-soft w-6 shrink-0">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <span
-                      className="font-face leading-none text-2xl sm:text-[1.7rem] text-ink truncate"
-                      style={{ fontWeight: cut.weight }}
-                    >
-                      {cut.name}
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-3 shrink-0">
-                    <span className="font-note text-[10px] uppercase tracking-widest text-ink-soft hidden sm:inline">
-                      <span className="text-vermilion mr-2">·</span>
-                      {cut.note}
-                    </span>
-                    <span className="font-note text-[10px] tabular-nums text-vermilion">
-                      {cut.weight}
-                    </span>
-                  </div>
-                </motion.div>
-              ))}
+              {Array.isArray(cuts) &&
+                cuts.map((cut, i) => (
+                  <motion.div
+                    key={cut.name}
+                    variants={itemVariants}
+                    className="group flex items-baseline justify-between gap-4 border-b border-hairline-faint py-5 hover:bg-paper transition-colors duration-200 px-3 -mx-3"
+                  >
+                    <div className="flex items-baseline gap-3 min-w-0">
+                      <span className="font-note text-[10px] tabular-nums text-ink-soft w-6 shrink-0">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <span
+                        className="font-face leading-none text-2xl sm:text-[1.7rem] text-ink truncate"
+                        style={{ fontWeight: cut.weight }}
+                      >
+                        {cut.name}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-3 shrink-0">
+                      <span className="font-note text-[10px] uppercase tracking-widest text-ink-soft hidden sm:inline">
+                        <span className="text-vermilion mr-2">·</span>
+                        {cut.note}
+                      </span>
+                      <span className="font-note text-[10px] tabular-nums text-vermilion">
+                        {cut.weight}
+                      </span>
+                    </div>
+                  </motion.div>
+                ))}
             </div>
 
             <motion.p
